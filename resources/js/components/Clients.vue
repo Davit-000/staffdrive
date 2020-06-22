@@ -38,7 +38,7 @@
           <h2 class="uk-modal-title">{{ modalTitle }}</h2>
         </div>
         <div class="uk-modal-body">
-          <ValidationObserver ref="form" tag="form" class="uk-form-stacked">
+          <ValidationObserver @submit.prevent="createClient" ref="form" tag="form" class="uk-form-stacked">
             <ValidationProvider :rules="client.rules.name" tag="div" name="name" class="uk-margin" v-slot="{ errors, classes }">
               <label class="uk-form-label" for="name">Name</label>
               <div class="uk-form-controls">

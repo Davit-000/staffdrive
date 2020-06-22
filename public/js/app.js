@@ -36744,7 +36744,13 @@ var render = function() {
                   {
                     ref: "form",
                     staticClass: "uk-form-stacked",
-                    attrs: { tag: "form" }
+                    attrs: { tag: "form" },
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.createClient($event)
+                      }
+                    }
                   },
                   [
                     _c("ValidationProvider", {

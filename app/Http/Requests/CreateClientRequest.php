@@ -39,7 +39,7 @@ class CreateClientRequest extends FormRequest
     $client = $user->clients()->create($this->all());
 
     return response()->json([
-      'client' => $client,
+      'client' => $client->load('projects'),
       'message' => 'Client successfully created'
     ]);
   }
